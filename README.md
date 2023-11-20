@@ -1,2 +1,2 @@
 # redborder-serverspec-ips
-Tests redborder-ips
+Infrastructure integration testing for redborder-ips
