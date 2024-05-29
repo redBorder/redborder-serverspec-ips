@@ -6,7 +6,7 @@ set :os, family: 'redhat', release: '9', arch: 'x86_64'
 
 packages = Set.new(%w[pfring pfring-dkms])
 
-describe "Checking packages for pfring..." do
+describe 'Checking packages for pfring...' do
   packages.each do |package|
     describe package(package) do
       it 'is expected to be installed' do
