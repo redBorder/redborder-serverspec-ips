@@ -3,7 +3,7 @@ Infrastructure integration testing for redborder-ips
 
 ## Installation
 On your workstation, execute the following command in your terminal:
-```ssh
+```
 bundle install
 ```
 
