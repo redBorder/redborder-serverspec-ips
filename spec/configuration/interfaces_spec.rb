@@ -10,3 +10,9 @@ describe 'Default Route Interface' do
     its(:stdout) { should match(/default via .* dev #{management_interface}\s/) }
   end
 end
+
+describe 'Segment interfaces' do
+  it 'should have at least one of br0 or vrbr0' do
+    expect(command('ip link show br0').exit_status).to eq 0 or expect(command('ip link show vrbr0').exit_status).to eq 0
+  end
+end
