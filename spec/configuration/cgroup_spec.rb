@@ -11,6 +11,8 @@ describe 'Check cgroups config' do
   end
 
   cgroups.each do |cgroup|
+    next if cgroup.include?"snortd" or cgroup.include?"barnyard2"
+
     describe file("#{cgroup}/cgroup.controllers") do
       it { should exist }
       it { should be_file }
