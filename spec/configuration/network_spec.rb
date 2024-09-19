@@ -13,3 +13,16 @@ describe 'All interfaces: ' do
     end
   end
 end
+
+describe 'At least one non-loopback interface' do
+  it 'should exist and be up' do
+    non_loopback_interfaces = interfaces.reject { |iface| iface == 'lo' }
+    expect(non_loopback_interfaces).not_to be_empty
+
+    working_interface = non_loopback_interfaces.find do |iface|
+      interface(iface).exists? && interface(iface).up?
+    end
+
+    expect(working_interface).not_to be_nil
+  end
+end
