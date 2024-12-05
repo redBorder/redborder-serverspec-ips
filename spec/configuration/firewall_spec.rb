@@ -16,9 +16,9 @@ end
 
 describe 'Check if not allowed open ports in public zone are empty' do
   valid_public_ports = Set.new [
-    '5353/udp',   #(mDNS / Serf)
-    '161/udp',    #(snmp)
-    '162/udp',    #(snmp)
+    '5353/udp',   # (mDNS / Serf)
+    '161/udp',    # (snmp)
+    '162/udp',    # (snmp)
   ]
 
   open_public = command('firewall-cmd --zone=public --list-ports')
