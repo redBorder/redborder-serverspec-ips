@@ -5,11 +5,10 @@ set :os, family: 'redhat', release: '9', arch: 'x86_64'
 
 cgroups = command('find /sys/fs/cgroup/redborder.slice -type d -name "redborder-*" -not -name "*.service"').stdout.split
 
+describe file('/sys/fs/cgroup/redborder.slice') do
+  it { should exist }
+end
 describe 'Check cgroups' do
-  describe file('/sys/fs/cgroup/redborder.slice') do
-    it { should exist }
-  end
-
   cgroups.each do |cgroup|
     next if cgroup.include?('snortd') || cgroup.include?('barnyard2')
 
