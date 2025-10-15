@@ -50,9 +50,7 @@ describe 'Services defined in the registered manager' do
       cdomain = file('/etc/redborder/cdomain').content.strip
 
       [
-        "http2k.#{cdomain}",
         "http2k.service.#{cdomain}",
-        "erchef.service.#{cdomain}",
         "erchef.service.#{cdomain}",
         "s3.service.#{cdomain}",
         "f2k.service.#{cdomain}",
