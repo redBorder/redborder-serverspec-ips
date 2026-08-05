@@ -22,3 +22,5 @@ options[:password] = if ENV['ASK_LOGIN_PASSWORD']
                      end
 
 set :ssh_options, options
+
+# No way connecting through ssh becuase of multiple keys, try setting MaxAuthTries in ssh conf and restart the service!
